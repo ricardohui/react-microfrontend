@@ -10,7 +10,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "products",
       filename: "remoteEntry.js",
+      // define the filename here. This is the first file used by Host to access this project. It lists different modules that can be loaded from the Producs project.
       exposes: { "./ProductsIndex": "./src/index" },
+      // The Host will use `ProductIndex` to access it.
     }),
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
   ],

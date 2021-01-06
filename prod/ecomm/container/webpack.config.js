@@ -8,7 +8,11 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "container",
-      remotes: { products: "products@http://localhost:8081/remoteEntry.js" },
+      remotes: {
+        products: "products@http://localhost:8081/remoteEntry.js",
+        cart: "cart@http:localhost:8082/remoteEntry.js",
+      },
+      // remoteEntry.js is the entry file for this Remote.
     }),
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
   ],
