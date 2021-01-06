@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "products",
+      // should not share the same name with the id tag in index.html as browser will create global variable for all id tag.
       filename: "remoteEntry.js",
       // define the filename here. This is the first file used by Host to access this project. It lists different modules that can be loaded from the Producs project.
       exposes: { "./ProductsIndex": "./src/bootstrap" },
