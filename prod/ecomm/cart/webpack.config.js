@@ -9,7 +9,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "cart",
       filename: "remoteEntry.js",
-      exposes: { "./CartShow": "./src/index.js" },
+      exposes: { "./CartShow": "./src/bootstrap" },
       shared: ["faker"],
     }),
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
